@@ -1,0 +1,15 @@
+{%extends "blog/base.html"%}
+{%block content%}
+	{% for dashboard in Dashboards%}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ dashboard.title }}</a>
+		      <small class="text-muted">{{ dashboard.date_posted|date:"d F,Y" }}</small>
+		    </div>
+		    <p class="article-content">{{ dashboard.content }}</p>
+			<img src="{{ dashboard.image.url }}" class="card-img-top img-fluid">
+		  </div>
+		</article>		
+	{% endfor %}
+{% endblock content %}
